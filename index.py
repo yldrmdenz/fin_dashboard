@@ -53,7 +53,7 @@ def page_changer(page):
     elif page == '/page-assets':
         return layouts.layout_assets
     else:
-        return html.Div(children=None)
+        return html.Div('Hello this is Deniz')
 
 
 if __name__ == "__main__":
