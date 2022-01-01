@@ -14,7 +14,7 @@ import datetime
 import pandas as pd
 import layouts
 import callbacks
-from app import app,server
+from app import app, server
 
 
 app.layout = html.Div(
