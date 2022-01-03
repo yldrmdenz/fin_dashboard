@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 import layouts
 import callbacks
-from app import app
+from app import app,server
 app.layout = html.Div(
     children=[
         dbc.Navbar(
