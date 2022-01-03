@@ -28,9 +28,9 @@ layout_home = html.Div(
         html.Div(id='split-column-1',
                  children=[
                      jumbotron,
-                     # html.Iframe(
-                     #     src="https://tr.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,2,4,6,66,97,18",
-                     #     width="100%", height='400px'),
+                     html.Iframe(
+                         src="https://tr.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,2,4,6,66,97,18",
+                         width="100%", height='400px'),
 
                      second_jumbotron,
                      html.H2('Latest News',style={'text-align':'center'}),
