@@ -8,15 +8,14 @@ align-items: center;
 }
 
 .nav-link{
-	color: white;
+	color: black;
 }
 
 body{
 
-background-color: black;
+background-color: white;
 
 }
-
 
 .btn{
     display:block;
