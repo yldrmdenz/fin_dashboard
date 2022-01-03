@@ -35,9 +35,18 @@ layout_home = html.Div(
                      second_jumbotron,
                      html.H2('Latest News',style={'text-align':'center'}),
                      dbc.Row(children=[
-                         dbc.Col(dbc.ListGroupItem(id='yahoo-fin-cont')),
-                         dbc.Col(dbc.ListGroupItem(id='wash-post-cont')),
-                         dbc.Col(dbc.ListGroupItem(id='fin-times-cont')),
+                         dbc.Col(dbc.ListGroupItem(id='yahoo-fin-cont'),style = {
+                  "overflow": "scroll",
+                  "height": "800px"
+               },),
+                         dbc.Col(dbc.ListGroupItem(id='wash-post-cont'),style = {
+                  "overflow": "scroll",
+                  "height": "800px"
+               }),
+                         dbc.Col(dbc.ListGroupItem(id='fin-times-cont'),style = {
+                  "overflow": "scroll",
+                  "height": "800px"
+               }),
                      ], id='news-list-group'),
                  ]
                  ),
