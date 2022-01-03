@@ -14,7 +14,10 @@ layout_crypto = html.Div(
                      interval=5*1000,  # in milliseconds
                      n_intervals=0
                  ),
-                     dbc.Row(children=[dbc.Col(children=[dt.DataTable(id='crypto-table', editable=True)],md=6),
+                     dbc.Row(children=[dbc.Col(children=[dt.DataTable(id='crypto-table', editable=True)],md=6,style = {
+                  "overflow": "scroll",
+                  "height": "400px"
+               }),
                                        dbc.Col(children=[dcc.Graph(id='btc-graph')],md=6)]
                              ),
                  ]
