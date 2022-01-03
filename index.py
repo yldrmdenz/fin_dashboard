@@ -1,22 +1,13 @@
-import numpy as np
-import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
 from dash.dependencies import Input, Output, State
-from api_receiver import get_stock_market_data
-import dash_table as dt
-import yahoo_fin.stock_info as si
-from yahoo_fin import news
-import requests
-import datetime
-import pandas as pd
 import layouts
-import callbacks
-from app import app, server
+from app import app
 from jumbo_cols import jumbotron, second_jumbotron
 from news_api import parse_rss_data
+
+
 app.layout = html.Div(
     children=[
         dbc.Navbar(
@@ -31,7 +22,7 @@ app.layout = html.Div(
             sticky="top",
             color="primary",
         ),
-        dcc.Location(id='url', refresh=False),
+        html.Iframe(src="https://tr.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&pairs=1,2,4,6,66,97,18", width="100%" ,height='400px' ),        dcc.Location(id='url', refresh=False),
         dcc.Interval(
             id='interval-component',
             interval=60*1000,  # in milliseconds
@@ -54,8 +45,7 @@ app.layout = html.Div(
                Output('fin-times-cont', 'children')],
               Input('interval-component', 'n_intervals'))
 def update_news(refresh) :
-    news_dict = parse_rss_data()
-    list_of_news = []
+
     list_of_yf = []
     list_of_wp = []
     list_of_ft = []
@@ -104,24 +94,6 @@ def update_news(refresh) :
                     ]
                 ))
     return list_of_yf, list_of_wp, list_of_ft
-    # for value in news_dict.values() :
-    #     list_of_news.append(
-    #         dbc.ListGroupItem(
-    #             [
-    #                 html.Div(
-    #                     [
-    #                         html.H5(value['title'], className="mb-1"),
-    #                         html.Small("Yay!", className="text-success"),
-    #                     ],
-    #                     className="d-flex w-100 justify-content-between",
-    #                 ),
-    #                 html.P(value['body'], className="mb-1"),
-    #                 html.Small("Plus some small print.", className="text-muted"),
-    #             ]
-    #         )
-    #     )
-    # return list_of_news
-
 
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])

@@ -8,7 +8,7 @@ left_jumbotron = dbc.Col(
             html.Hr(className="my-2"),
             html.P (
                 "Get the latest news from the news agencies "
-                "And track the live stock data.Free ."
+                "And track the live Stock & Crypto data. Free."
             ),
         ],
         className="h-100 p-5 text-white bg-dark rounded-1",
@@ -31,4 +31,6 @@ jumbotron = dbc.Row(
     [left_jumbotron],
     className="align-items-md-stretch",
 )
-second_jumbotron = dbc.Row(children=[right_jumbotron],className="align-items-md-stretch")
+second_jumbotron = dbc.Row(children=[right_jumbotron],
+                           className="align-items-md-stretch"
+                           )
