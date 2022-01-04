@@ -61,7 +61,8 @@ layout_stock = html.Div(
         html.Div(id='split-column-1',
                  children=[
                      html.H2('Please Pick the Stock(s) you would like to Display from the Dropdown'),
-                     html.Div('',style={'height':'100px'}),
+                     html.P('The dropdown contains the stocks of NASDAQgit'),
+                     #html.Div('',style={'height':'100px'}),
                      dcc.Dropdown(id='select-stock',
                                   multi=True,
                                   value=['TSLA'],
